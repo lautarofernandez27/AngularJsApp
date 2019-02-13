@@ -22,14 +22,16 @@
             <select class="form-control" style="width:70px" ng-model="instruccionesPorCiclo" ng-options="x for x in numbers"></select>
         </div>
         <table>
-            <tr></tr>
+            <tr>
+                <td ng-controller="selectorController">
+                    <select class="form-control" style="width:70px" ng-model="UnidadesFuncionales" ng-options="x for x in registros"></select>
+                </td>
+                <td ng-controller="selectorController">
+                    <select class="form-control" style="width:70px" ng-model="EstacionesReserva" ng-options="x for x in registros"></select>
+                </td>
+            </tr>
         </table>
-            <td ng-controller="selectorController">
-                <select class="form-control" style="width:70px" ng-model="UnidadesFuncionales" ng-options="x for x in registros"></select>
-            </td>
-            <td ng-controller="selectorController">
-                <select class="form-control" style="width:70px" ng-model="EstacionesReserva" ng-options="x for x in registros"></select>
-            </td>
+            
         <h4>Ciclos por instruccion</h4>
         <table class="form-group">
             <tr>
