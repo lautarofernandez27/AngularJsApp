@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJs Sample</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/demoController.js"></script>
+    <script src="app/controllers/selectorController.js"></script>
+    <script src="app/controllers/selectorInstrucciones.js"></script>
+    <script src="app/controllers/selectorRegistros.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div ng-controller="demoController">
+        <h2>{{Message}}</h2>
+    </div>
+    <div ng-controller="selectorController">
+        <h4>Instrucciones por ciclo</h4>
+        <div class="form-group">
+            <select class="form-control" style="width:70px" ng-model="instruccionesPorCiclo" ng-options="x for x in numbers"></select>
+        </div>
+        <table>
+            <tr></tr>
+        </table>
+            <td ng-controller="selectorController">
+                <select class="form-control" style="width:70px" ng-model="UnidadesFuncionales" ng-options="x for x in registros"></select>
+            </td>
+            <td ng-controller="selectorController">
+                <select class="form-control" style="width:70px" ng-model="EstacionesReserva" ng-options="x for x in registros"></select>
+            </td>
+        <h4>Ciclos por instruccion</h4>
+        <table class="form-group">
+            <tr>
+                <td>ADD</td>
+                <td>
+                    <select class="form-control" style="width:70px" ng-model="CiclosPorAdd" ng-options="x for x in numbers"></select>
+                </td>
+                <td>SUB</td>
+                <td>
+                    <select class="form-control" style="width:70px" ng-model="CiclosPorSub" ng-options="x for x in numbers"></select>
+                </td>
+                <td>MUL</td>
+                <td>
+                    <select class="form-control" style="width:70px" ng-model="CiclosPorMul" ng-options="x for x in numbers"></select>
+                </td>
+                <td>DIV</td>
+                <td>
+                    <select class="form-control" style="width:70px" ng-model="CiclosPorDiv" ng-options="x for x in numbers"></select>
+                </td>
+            </tr>
+        </table>
+        <h4>
+            Agregar instruccion
+        </h4>
+        <table class="form-group">
+            <tr>
+                <td ng-controller="selectorInstrucciones">
+                    <select class="form-control" style="width:70px" ng-model="Instruccion" ng-options="x for x in instrucciones"></select>
+                </td>
+                <td ng-controller="selectorRegistros">
+                    <select class="form-control" style="width:70px" ng-model="regDestino" ng-options="x for x in registros"></select>
+                </td>
+                <td ng-controller="selectorRegistros">
+                    <select class="form-control" style="width:70px" ng-model="regOp1" ng-options="x for x in registros"></select>
+                </td>
+                <td ng-controller="selectorRegistros">
+                    <select class="form-control" style="width:70px" ng-model="regOp2" ng-options="x for x in registros"></select>
+                </td>
+                
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>
